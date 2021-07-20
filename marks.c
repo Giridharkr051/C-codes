@@ -1,23 +1,32 @@
 //marks
-#include<stdio.h>
-void main()
+#include <stdio.h>
+int main()
 {
-     int marks[4][3],highest[4],i,j;
-
-for(i=0;i<4;i++)
-
-{     printf("Enter marks in subject %d : \n ",(i+1));
-for(j=0;j<3;j++)
-      {scanf("%d",&marks[i][j]);}
-}
-for(i=0;i<4;i++)
-
-     {highest[i]=marks[i][0];
-for(j=1;j<3;j++)
-{if(marks[i][j]>highest[i])
-    {highest[i]=marks[i][j];}
+int i,j,r,c;
+printf("\nInput the number of students and number of subjects: ");
+scanf("%d %d",&r,&c);
+int a[100][100],s[100];
+printf("Input Data:\n");
+for(i=0;i<r;i++)
+{ printf("\n");
+for(j=0;j<c;j++)
+{
+printf("Student [%d] marks in subject [%d] : ",i+1,j+1);
+scanf("%d",&a[i][j]);
 }
 }
-for(i=0;i<4;i++)
-{printf("Highest marks in subject %d = %d \n",i+1,highest[i]);}
+for(j=0;j<c;j++)
+{ s[j]=a[0][j];
+for(i=0;i<r;i++){
+if (s[j] < a[i][j])
+s[j] = a[i][j];
+}
+}
+for(i=0;i<c;i++)
+{
+printf("\n");
+printf("Highest in Subject[%d] is %d",i+1,s[i]);
+}
+printf("\n");
+return 0;
 }
